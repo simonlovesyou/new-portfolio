@@ -1,0 +1,39 @@
+$font-stack: 'Franklin Gothic Medium', 'Franklin Gothic', 'ITC Franklin Gothic', Helvetica, Arial, sans-serif;
+$bc: #FFF;
+$base-font: 14px;
+$font-color: black;
+$base-line-height: 1.6;
+$header-line-height: 1.4;
+
+html {
+	font-family: $font-stack;
+	font-size: $base-font;
+	color: $font-color;
+	line-height: $base-line-height;
+	background-color: $bc;
+}
+h1 {
+	font-size:1.6*2rem;
+	line-height: 1.4rem;
+}
+h2 {
+	line-height: 1.4rem;
+	font-size:1.6rem;
+}
+
+nav {
+	ul li {
+		list-style:none;
+		display:inline;
+	}
+}
+
+#projects {
+	ul li {
+		list-style:none;
+		display:inline;
+		p {
+			display:inherit;
+		}
+	}
+}
