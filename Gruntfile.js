@@ -1,5 +1,11 @@
 'use strict';
-module.exports = function(grunt) {
+const fs = require('fs');
+module.exports = grunt => {
+
+  require('load-grunt-tasks')(grunt);
+
+  let credentials = JSON.parse(fs.readFileSync('ftp-config/server.json', 'utf8'));
+
   grunt.initConfig({
     jade: {
       debug: {
@@ -23,39 +29,23 @@ module.exports = function(grunt) {
         files: {
           "public/index.html": ["src/jade/sub/landing.jade"],
           "public/about.html": ["src/jade/sub/about.jade"],
-          "public/projects.html": ["src/jade/sub/projects.jade"]
+          "public/projects.html": ["src/jade/sub/projects.jade"],
+          "public/contact.html": ["src/jade/sub/contact.jade"]
         },
-        compile: {
-          expand: true
-        }
-      },
-      directives: {
-        options: {
-          data: {
-            debug: false
-          },
-          pretty: false
-        },
-        files: [{
-          expand: true,
-          cwd: 'dev/jade/directives/',
-          src: ['**/*.jade'],
-          dest: 'public/directives',
-          ext: '.html'
-        }],
         compile: {
           expand: true
         }
       }
     },
     sass: {
-        options: {
-            sourceMap: true
-        },
         dist: {
-            files: {
-                'public/static/css/main.css': 'src/sass/main.scss'
-            }
+          files: [{
+            expand: true,
+            cwd: 'src/sass/',
+            src: ['style.scss'],
+            dest: 'public/static/css/',
+            ext: '.css'
+          }],
         }
     },
     uglify: {
@@ -69,10 +59,33 @@ module.exports = function(grunt) {
       }
     },
     copy: {
-      images: {
-        files: [
-          {expand: true, cwd:'dev/assets/images/', src: ['*'], dest: 'public/assets/img/', filter: 'isFile'},
+      "css-vendor": {
+        files: [{
+          expand: true, 
+          cwd:'node_modules/normalize.css/', 
+          src: ['normalize.css'], 
+          dest: 'public/static/css/', 
+          filter: 'isFile'},
+          {
+          expand: true, 
+          cwd:'src/css/vendor', 
+          src: ['**.css'], 
+          dest: 'public/static/css/', 
+          filter: 'isFile'
+          }
         ]
+      }
+    },
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: credentials.SERVER,
+          port: credentials.PORT,
+          authKey: 'key1'
+        },
+        src: credentials.SRC,
+        dest: credentials.DEST,
+        exclusions: ['public/**/.DS_Store']
       }
     },
     clean: {
@@ -86,6 +99,13 @@ module.exports = function(grunt) {
           spawn: false,
         },
       },
+      css: {
+        files: ['**.*.css'],
+        tasks: ['copy'],
+        options: {
+          spawn: false
+        }
+      },
       sass: {
         files: ['**/*.scss'],
         tasks: ['sass'],
@@ -96,26 +116,6 @@ module.exports = function(grunt) {
     },
   });
 
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-jade');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-ftp-deploy')
-  //grunt.task.requires()
-  grunt.registerTask('default', ['clean', 'jade', 'sass', 'watch']);
-
+  grunt.registerTask('default', ['clean', 'jade', 'sass', 'copy', 'watch']);
+  grunt.registerTask('deploy', ['ftp-deploy']);
 };
-
-/*
-# Only concat CSS files
-grunt concat:css
-
-# Concat CSS and JS files, but don't do anything else
-grunt concat
-*/
