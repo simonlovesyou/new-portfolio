@@ -1,0 +1,125 @@
+html {
+	font-family: $font-stack;
+	font-size: $base-font;
+	color: $palette-black;
+	line-height: $base-line-height;
+	background-color: $palette-white;
+}
+
+strong {
+	font-weight:bold;
+	color:$palette-black;
+}
+
+.link {
+	color: $palette-black;
+	text-decoration: none;
+	border-bottom: solid $palette-black
+}
+
+.content {
+	float:left;
+	margin:3% 0 3%;
+	padding-bottom:3%;
+	border-bottom: solid $palette-grey;
+}
+
+#description {
+	float:left;
+	margin:3% 0 3%;
+	h2 {
+		display: inline-block;
+		font-weight:normal;
+		margin-bottom:0;
+		font-size:2.6rem;
+		color:map-get($theme, 'main');
+		line-height:4rem;
+	}
+
+	h3 {
+		display: inline-block;
+		line-height: 3rem;
+		font-weight:normal;
+		font-size:1.6rem;
+		color:lighten($palette-black,20%);
+		strong {
+			color: lighten($palette-black, 10%);
+		}
+		.link {
+			border-bottom: solid lighten($palette-black, 10%);
+		}
+	}
+}
+
+#about {
+	width:90%;
+	float:left;
+	p {
+		font-size: 1.2rem;
+		line-height: 2.0rem;
+	}
+}
+
+.project {
+	width:70%;
+}
+
+#projects {
+	ul li {
+		list-style:none;
+		display:inline;
+		p {
+			display:inherit;
+		}
+	}
+	p {
+		font-size: 1.2rem;
+		line-height: 2.0rem;
+	}
+
+	ul {
+		padding-left: 0;
+	}
+
+	.project-title {
+		color: map-get($theme, 'main');
+	}
+
+	a {
+		color: map-get($theme, 'main');
+		text-decoration: none;
+		border-bottom: solid 2px map-get($theme, 'main');
+	}
+
+	.tag {
+		padding: 4px 4px;
+		border-radius:4px;
+		color:white;
+	}
+
+	.tag-everything {
+		background-color: map-get($tags, 'everything');
+	}
+	.tag-dev {
+		background-color: map-get($tags, 'development');
+	}
+
+	.tag-testing {
+		background-color: map-get($tags, 'testing');
+		color:white;
+	}
+	.tag-design {
+		background-color: map-get($tags, 'design');
+		color:$palette-black;
+	}
+	.tag-ux {
+		background-color: map-get($tags, 'ux');
+	}
+}
+
+#contact {
+	p {
+		font-size: 1.2rem;
+		line-height: 2.0rem;
+	}
+}

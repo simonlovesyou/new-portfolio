@@ -1,0 +1,43 @@
+$font-stack: 'Franklin Gothic Medium', 'Franklin Gothic', 'ITC Franklin Gothic', Helvetica, Arial, sans-serif;
+$base-font: 14px;
+$base-line-height: 1.6;
+$header-line-height: 1.4;
+
+
+// ----
+// Sass (v3.3.14)
+// Compass (v1.0.3)
+// ----
+
+// Neutral color palette
+$palette-base:  		#2C3643;
+$palette-base--dark:    #1E73AC;
+$palette-base--neutral: #34A0A5;
+$palette-base--light:   #AED19A;
+$palette-base--xlight:  #ECF4C1;
+$palette-base--comp:    #EA8756;
+
+$palette-white: 		#F9F9F9;
+$palette-black: 		#353535;
+$palette-grey: 			#DCDCDC;
+$palette-pink:			#D2268A;
+$palette-blue:			#26C7DA;
+
+
+
+$theme: (
+	'main': $palette-black
+);
+
+
+// Themes
+$tags: (
+
+	'everything': $palette-base,
+	'testing': $palette-base--dark,
+	'development': $palette-base--neutral,
+	'design': $palette-base--xlight,
+	'ux': $palette-base--comp
+  
+);
+

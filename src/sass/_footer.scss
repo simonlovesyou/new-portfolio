@@ -1,0 +1,36 @@
+footer {
+	width:100%
+}
+
+#contact-footer { 
+	float:left;
+	width:100%;
+	a {
+		color:lighten($palette-black, 15%);
+		text-decoration:none;
+	}
+
+	p {
+		color:lighten($palette-black, 15%);
+		margin:9px 2% 0 0;
+		float:left;
+		font-size: 1.2rem;
+	}
+
+	p strong {
+		color:darken(red, 10%);
+		font-size:1.5rem;
+	}
+
+	ul {
+		padding: 0;
+	}
+	ul li {
+		list-style:none;
+		display:inline-block;
+		font-size: 1.2rem;
+		margin-right:2%;
+		float:left;
+	}
+	padding-bottom:4%;
+}
