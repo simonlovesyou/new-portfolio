@@ -1,45 +1,151 @@
 extends ../layout.jade
 
-block content  
-  #projects
-    h3 Projects
+block content 
+  #projects.content
+
+    h1 Projects
+
+    p These are some of the projects I've worked on. If you have any questions about any of my projects or want to work with me, please see the #[a(href="http://www.simonsager.se/new/contact.html").link Contact section].
+
+    h2 Open Source Projects
     ul
       li
-        div
-          a(href="https://github.com/simonlovesyou/file-wipe")
-            h4.project-title File-wipe
+        div.project
+          h3.project-title 
+            a(href="https://github.com/simonlovesyou/file-wipe") file-wipe
+            
           p A npm module for wiping a file from the file system completely so that it cannot be retrieved later with file retrieval programs.
+
+          p Tools used: ES6+ Node.js, Grunt 
+
+          p You can find the open source project on #[a(href="https://github.com/simonlovesyou/file-wipe") Github], and it is available for download through #[a(href="https://www.npmjs.com/package/file-wipe") npm]
+
           span
-            p What I did:
+            p #[b What I did]:
           ul
-            li 
-              p Everything; 
-            li 
-              p Testing,
-            li
+            li.tag.tag-everything
+              p Everything
+            li.tag.tag-testing
+              p Testing
+            li.tag.tag-dev
               p Development
-          ul
-            li
-              a(href="https://github.com/simonlovesyou/file-wipe") Github
-            li
-              a(href="https://www.npmjs.com/package/file-wipe") npm
       li
-        div
-          a(href="https://github.com/simonlovesyou/file-wipe")
-            h4.project-title Simon Says
-          p A filesystem management tool built with Node.js. Tell Simon Says to watch a folder and it will quietly in the background organize the contents for you based on the rules you give it. This is a WIP, please see the Github page to see the development progress.
+        div.project
+          h3.project-title
+            a(href="https://github.com/simonlovesyou/file-wipe") Simon-Says
+            
+          p A filesystem management tool built with Node.js on the electron shell. Tell Simon Says to watch a folder and it will quietly in the background organize the contents for you based on the rules you give it. This is a WIP, please see the Github page to see the development progress. 
+
+          p Tools used: ES6+ Node.js, Electron shell, Grunt, Jade, React, Bootstrap
+
+          p You can find the code for the application on #[a(href="https://github.com/simonlovesyou/Simon-Says") Github].
+
           span
-            p What I did:
+            p #[b What I did]:
           ul
-            li 
-              p Everything; 
-            li 
-              p Testing, 
-            li
-              p Development,
-            li
+            li.tag.tag-everything
+              p Everything
+            li.tag.tag-testing
+              p Testing
+            li.tag.tag-dev
+              p Development
+            li.tag.tag-design
               p Design
+            li.tag.tag-design
+              p UX
+
+      li
+        div.project
+          h3.project-title
+            a(href="https://chrome.google.com/webstore/detail/bättre-nyheter/mfbndbefnnjgaidnmnldlofidognjepl") Bättre Nyheter
+            
+          p With the new wave in journalism with clickbait articles and paywalls this is an attempt to battle it. This chrome-extension can filter clickbait using A.I and subscription based articles from bigger Swedish newssites. 
+
+          p Tools used: Node.js, Grunt, Jade
+
+          p You can find the open-source code for the chrome-extension on #[a(href="https://github.com/simonlovesyou/Battre-Nyheter") Github], and it is available for download through the #[a(href="https://chrome.google.com/webstore/detail/bättre-nyheter/mfbndbefnnjgaidnmnldlofidognjepl") Google Web Store.]
+
+          span
+            p #[b What I did]:
           ul
-            li
-              a(href="https://github.com/simonlovesyou/Simon-Says") Github
-  include ../partials/footer.jade
+            li.tag.tag-everything
+              p Everything
+            li.tag.tag-testing
+              p Testing
+            li.tag.tag-dev
+              p Development 
+            li.tag.tag-design
+              p Design
+      li
+        div.project
+          h3.project-title
+            a(href="https://github.com/simonlovesyou/Colormeans") Colormeans
+            
+          p A javascript library for retrieving a color palette from an image. The library is based on an improved version of the fast data-clustering algorithm k-means to better suite use with images.
+
+          p Tools used: Mocha
+
+          p You can find the open-source code for the library on #[a(href="https://github.com/simonlovesyou/Colormeans") Github].
+
+          span
+            p #[b What I did]:
+          ul
+            li.tag.tag-everything
+              p Everything
+            li.tag.tag-testing
+              p Testing 
+            li.tag.tag-dev
+              p Development
+      li
+        div.project
+          h3.project-title
+            a(href="https://chrome.google.com/webstore/detail/bättre-nyheter/mfbndbefnnjgaidnmnldlofidognjepl") js-object-parser
+            
+          p A library for parsing a string to a javascript object. This module can handle strings where object properties are not wrapped in quotation marks which is the main difference between this module and JSON.parse.
+
+          p Tools used: ES6+ Node.js, Mocha
+
+          p You can find the open-source code for the library on #[a(href="https://github.com/simonlovesyou/Colormeans") Github].
+
+          span
+            p #[b What I did]:
+          ul
+            li.tag.tag-everything
+              p Everything
+            li.tag.tag-testing
+              p Testing
+            li.tag.tag-dev
+              p Development
+
+    h2 UX Projects
+    ul
+      li
+        div.project
+          h3.project-title
+            a(href="https://chrome.google.com/webstore/detail/bättre-nyheter/mfbndbefnnjgaidnmnldlofidognjepl") Pilgrim
+            
+          p I participated in a Hackathon at the Spotify HQ in Stockholm where my group #[i Rainbow Apple] developed an app for discovering a city by their local artists for iOS. 
+
+          p You can find the open-source code for our groups application on #[a(href="https://github.com/spotify-unify/rainbowapple") Github] and all the other projects by other groups #[a(href="https://github.com/spotify-unify/") here]
+
+          span
+            p #[b What I did]:
+          ul
+            li.tag.tag-ux
+              p UX
+      li
+        div.project
+          h3.project-title
+            a(href="https://chrome.google.com/webstore/detail/bättre-nyheter/mfbndbefnnjgaidnmnldlofidognjepl") Web Platform for Zordix
+            
+          p Me and a group of students got to work with the company Zordix where we designed a web platform for one of their products
+
+          p Tools I used: Node.js, Grunt, Mocha, MongoDB with Mongoose
+
+          span
+            p #[b What I did:]
+          ul
+            li.tag.tag-ux
+              p UX
+            li.tag.tag-backend
+              p Back end
