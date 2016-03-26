@@ -30,9 +30,9 @@ module.exports = grunt => {
         },
         files: {
           "public/index.html": ["src/jade/sub/landing.jade"],
-          "public/about.html": ["src/jade/sub/about.jade"],
-          "public/projects.html": ["src/jade/sub/projects.jade"],
-          "public/contact.html": ["src/jade/sub/contact.jade"]
+          "public/about/index.html": ["src/jade/sub/about.jade"],
+          "public/projects/index.html": ["src/jade/sub/projects.jade"],
+          "public/contact/index.html": ["src/jade/sub/contact.jade"]
         },
         compile: {
           expand: true
