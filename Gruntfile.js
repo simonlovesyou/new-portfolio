@@ -89,6 +89,15 @@ module.exports = grunt => {
         }]
       }
     },
+    concat: {
+      options: {
+        separator: ';',
+      },
+      dist: {
+        src: ['public/static/css/style.min.css', 'public/static/css/normalize.min.css', 'public/static/css/modernscale.min.css'],
+        dest: 'public/static/css/style.min.css',
+      },
+    },
     'ftp-deploy': {
       build: {
         auth: {
