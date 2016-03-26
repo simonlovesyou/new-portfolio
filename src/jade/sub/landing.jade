@@ -4,8 +4,9 @@ block basetag
   -var base = '../'
 
 block content
+  +header('index')
   #description.content
-    h2 I am an #[strong UI/UX Student], #[strong Open-Source Developer] and #[em at least] 7 other things. Mostly based in Umeå.
-    h3 Read more #[a(href="http://simonsager.se/new/about.html").link #[strong About me]] or see a list of #[a(href="http://simonsager.se/new/projects.html").link #[strong Projects]] I've worked on. Or you can just get in #[a(href="http://simonsager.se/new/projects.html").link #[strong Contact]] with me
+    h2 I am an #[strong UI/UX Student], #[strong Open-Source Developer] and at least 7 other things. Mostly based in Umeå.
+    h3 Read more #[+pagelink('about', 'About me')] or see a list of #[+pagelink('projects', 'Projects')] I've worked on. Or you can just get in #[+pagelink('contact', 'Contact')] with me
 
     
