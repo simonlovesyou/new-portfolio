@@ -17,14 +17,14 @@ nav {
 	}
 }
 
-
-
 .logo {
-	width: auto;
+	width: 43px;
 	float: left;
 	display: block;
-	margin-top:2%;
+	margin-top:16px;
+	cursor: pointer;
 	a {
+		width:inherit;
 		text-decoration:none;
 	}
 	h1 {
