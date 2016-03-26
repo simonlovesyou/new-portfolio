@@ -41,12 +41,12 @@ strong {
 		line-height: 3rem;
 		font-weight:normal;
 		font-size:1.6rem;
-		color:lighten($palette-black,20%);
+		color: $palette-black
 		strong {
-			color: lighten($palette-black, 10%);
+			color: $palette-black
 		}
 		.link {
-			border-bottom: solid lighten($palette-black, 10%);
+			border-bottom: solid $palette-black
 		}
 	}
 }
