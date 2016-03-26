@@ -1,5 +1,7 @@
 'use strict';
 const fs = require('fs');
+const dev = process.env.NODE_ENV ? !!process.env.NODE_ENV.match(/dev/) : true;
+
 module.exports = grunt => {
 
   require('load-grunt-tasks')(grunt);
@@ -11,7 +13,7 @@ module.exports = grunt => {
       debug: {
         options: {
           data: {
-            debug: true
+            dev: true
           },
           pretty: true
         },
@@ -22,7 +24,7 @@ module.exports = grunt => {
       release: {
         options: {
           data: {
-            debug: false
+            dev
           },
           pretty: false
         },
@@ -89,33 +91,35 @@ module.exports = grunt => {
       }
     },
     clean: {
-      public: ["public/"]
+      public: ["public/"],
+      css: ["public/static/css/*.css", "public/static/css/*.map", "!public/static/css/style.min.css"]
     },
     watch: {
+      options: {
+        spawn: false,
+      },
       jade: {
         files: ['**/*.jade'],
         tasks: ['jade'],
-        options: {
-          spawn: false,
-        },
+
       },
       css: {
         files: ['**.*.css'],
-        tasks: ['copy'],
-        options: {
-          spawn: false
-        }
+        tasks: ['copy']
       },
       sass: {
         files: ['**/*.scss'],
-        tasks: ['sass'],
-        options: {
-          spawn: false,
-        },
+        tasks: ['sass']
       },
+      babel: {
+        files: ['**/*.js'],
+        tasks: ['babel']
+      }
     },
   });
 
-  grunt.registerTask('default', ['clean', 'jade', 'sass', 'copy', 'watch']);
+  
+  grunt.registerTask('dev', ['clean:public', 'jade', 'sass', 'copy', 'cssmin', 'watch']);
+  grunt.registerTask('build', ['clean:public', 'jade', 'sass', 'copy', 'cssmin', 'clean:css']);
   grunt.registerTask('deploy', ['ftp-deploy']);
 };

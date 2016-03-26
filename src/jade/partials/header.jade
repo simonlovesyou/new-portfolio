@@ -1,4 +1,6 @@
-block nav
+mixin navlink(sub, inner, className)
+  a(href=(dev ? 'http://localhost:8080/' : 'http://simonsager.se/') + sub class=className) #{inner}
+
   header
     .logo
       a(href="http://www.simonsager.se/new/index.html")
