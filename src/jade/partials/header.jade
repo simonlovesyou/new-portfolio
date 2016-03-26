@@ -4,16 +4,25 @@ mixin navlink(sub, inner, className)
 mixin header(active)
   header
     .logo
-      a(href="http://www.simonsager.se/new/index.html")
-        h1 SJ
+      +pagehref('')(class=(active=='index' ? 'logo-border' : '')) #[h1 SJ]
+
     nav
       ul
         li
           .nav-link
-            a(href="http://simonsager.se/new/about.html") About
+            if active == 'about'
+              +navlink('about', 'About', 'border')
+            else
+              +navlink('about', 'About')
         li
           .nav-link
-            a(href="http://simonsager.se/new/projects.html") Projects
+            if active == 'projects'
+              +navlink('projects', 'Projects', 'border')
+            else
+              +navlink('projects', 'Projects')
         li
           .nav-link
-            a(href="http://simonsager.se/new/contact.html") Contact
+            if active == 'contact'
+              +navlink('contact', 'Contact', 'border')
+            else
+              +navlink('contact', 'Contact')

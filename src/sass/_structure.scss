@@ -3,6 +3,48 @@ body {
 	width: 70%;
 }
 
+@media only screen and (max-width: 1050px) {
+  nav {
+    width:60%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  nav {
+    width:80%;
+  }
+  body {
+    width: 90%;
+  }
+
+  .project {
+    width: 90%;
+  }
+}
+
+.logo-border,
+.border {
+    position: relative;
+}
+
+.logo-border::after,
+.border::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: inherit;
+  border-bottom: solid 3px #353535;
+}
+
+.border::after {
+  bottom: -26px;
+}
+
+.logo-border::after {
+  bottom:-5px;
+}
+
 @media only screen and (max-width: 480px) {
   body {
   	width:93%;
@@ -10,7 +52,15 @@ body {
   header, nav {
   	width:100%;
   	float:left;
-  	height:140px;
+  	height:138px;
+  }
+
+  nav {
+    width:100%;
+  }
+
+  .border::after {
+    bottom: -15px;
   }
   
   .logo {
