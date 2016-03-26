@@ -1,8 +1,10 @@
 extends ../layout.jade
+include ../partials/header.jade
 block basetag
   -var base = '../'
 
 block content 
+  +header('projects')
   #projects.content
 
     h1 Projects

@@ -1,9 +1,15 @@
 extends ../layout.jade
+include ../partials/header.jade
 block basetag
   -var base = '../'
 
 block content
-	#contact.content
-		h1 Contact me
-		p So you made it this far. Now the only thing holding us two back are these barriers of 01101100011011110111011001100101, but lets fight fire with fire. 
-		p There are a number of ways to reach me, one of them is to send an #[a(href="mailto:SimonLJohansson92@gmail.com").link #[strong e-mail]]. If you really can't wait to get in touch with me, you'd probably get the fastest reaction on #[a(href="https://twitter.com/simonjohansosn").link #[strong Twitter]]. Send a PR on #[a(href="https://github.com/simonlovesyou").link #[strong Github]] or open a issue if you'd like to collaborate on any of my many open-source projects. 
+  +header('contact')
+  #contact.content
+    h1 Contact me
+    p So you made it this far. Now the only thing holding us two back are these barriers of 01101100011011110111011001100101, but lets fight fire with fire. 
+    p There are a number of ways to reach me, one of them is to send an #[a(href="mailto:SimonLJohansson92@gmail.com").link #[strong e-mail]]. If you really can't wait to get in touch with me, you'd probably get the fastest reaction on #[a(href="https://twitter.com/simonjohansosn").link #[strong Twitter]]. Send a PR on #[a(href="https://github.com/simonlovesyou").link #[strong Github]] or open a issue if you'd like to collaborate on any of my many open-source projects. I'm also available on #[a(href="https://www.linkedin.com/in/simon-johansson-85a762b1?trk=nav_responsive_tab_profile").link #[strong LinkedIn]].
+
+    p Talk to you later!
+
+

@@ -1,8 +1,10 @@
 extends ../layout.jade
+include ../partials/header.jade
 block basetag
   -var base = '../'
 
 block content
+  +header('about')
   #about.content
     h1 About me
     p Hello there, I'm #[b Simon Johansson]. When I am not lifting weights or drinking way too much coffee I #[i develop open-source projects]. I am currently studying Master of Sciences in Interaction and Design at Umeå University. 
