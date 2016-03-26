@@ -4,7 +4,9 @@
   "description": "A more barebones version of my website",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "NODE_ENV='production' grunt build",
+    "dev": "NODE_ENV='dev' grunt dev",
+    "deploy": "grunt deploy"
   },
   "repository": {
     "type": "git",
