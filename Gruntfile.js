@@ -78,6 +78,17 @@ module.exports = grunt => {
         ]
       }
     },
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: 'public/static/css/',
+          src: ['*.css', '!*.min.css'],
+          dest: 'public/static/css/',
+          ext: '.min.css'
+        }]
+      }
+    },
     'ftp-deploy': {
       build: {
         auth: {
