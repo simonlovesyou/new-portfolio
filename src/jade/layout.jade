@@ -1,3 +1,6 @@
+block basetag
+  -var base = '.'
+
 mixin pagehref(sub)
   a(href=(dev ? 'http://localhost:8080/' : 'http://simonsager.se/') + sub class!=attributes.class)
     if block
@@ -15,6 +18,7 @@ html(class=".no-js")
     title
     meta(name='description', content='Portfolio website for Simon Johansson')
     meta(name='viewport', content='width=device-width, initial-scale=1')
+    base(href='#{base}')
     if dev
         link(rel='stylesheet', href='static/css/normalize.css')
         link(rel='stylesheet', href='static/css/modernscale.css')
