@@ -3,3 +3,4 @@ node_modules/
 public/
 debug/
 ftp-config/
+.sass-cache/
